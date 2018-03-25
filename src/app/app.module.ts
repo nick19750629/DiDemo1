@@ -21,16 +21,17 @@ import {AnotherProductService} from './shared/another-product.service';
   ],
   providers: [{
     provide: ProductService,
-    useFactory: () => {
-      const logger = new LoggerService();
-      const dev = Math.random() > 0.5;
-      if (dev) {
+    useFactory: (logger: LoggerService, isDev) => {
+      if (isDev) {
         return new ProductService(logger);
       } else {
         return new AnotherProductService(logger);
       }
-    }
-  }, LoggerService],
+    },
+    deps: [LoggerService, 'IS_DEV_ENV']
+  }, LoggerService, {
+    provide: 'IS_DEV_ENV', useValue: false
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
