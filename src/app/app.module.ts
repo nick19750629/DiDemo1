@@ -8,13 +8,15 @@ import {ProductService} from './shared/product.service';
 import { Product1Component } from './product1/product1.component';
 import {LoggerService} from './shared/logger.service';
 import {AnotherProductService} from './shared/another-product.service';
+import { BindComponent } from './bind/bind.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
-    Product1Component
+    Product1Component,
+    BindComponent
   ],
   imports: [
     BrowserModule
