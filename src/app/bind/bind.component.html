@@ -1,4 +1,20 @@
 <p>
   bind works!
 </p>
+<img [src]="imgUrl"><br>
+<img src={{imgUrl}}><br>
+<table>
+  <tr>
+    <td [attr.colspan]="size">Html属性绑定</td>
+  </tr>
+</table>
+<div class="a b c">样式</div>
+<div [class]='divClass'>样式绑定（3秒后变化）</div>
+<div class="a b" [class.c]='isBig'>样式绑定（3秒后变化）</div>
+<div [ngClass]="divAnyClass">样式分开绑定（3秒后变化）</div>
+<div [style.color] = 'isDev? "red": "blue"' >是否开发环境</div>
+<div [style.font-size.em] = 'isDev? 3: 1' >字体是否变化</div>
+<div [ngStyle] = 'divStyle' >样式控制</div>
+<input value="tom" (input)="doOnInput($event)">
 <button (click)="doOnClick($event)">点我</button>
+<button disabled>点我1</button>
