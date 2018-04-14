@@ -1,6 +1,7 @@
 <p>
   bind works!
 </p>
+<input #field (keyup)="onKey(field.value)">
 <img [src]="imgUrl"><br>
 <img src={{imgUrl}}><br>
 <table>

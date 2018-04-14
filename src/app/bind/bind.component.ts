@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-bind',
@@ -39,6 +40,14 @@ export class BindComponent implements OnInit {
         background: 'red'
       };
     }, 3000);
+    Observable.from([1, 2, 3, 4])
+      .filter( e => e % 2 == 0 )
+      .map( e => e * e )
+      .subscribe(
+        e => console.log(e),
+        err => console.error(err),
+        () => console.log('结束了')
+      );
   }
 
   ngOnInit() {
@@ -52,5 +61,9 @@ export class BindComponent implements OnInit {
   doOnInput(event: any) {
     console.log(event.target.value);
     console.log(event.target.getAttribute('value'));
+  }
+
+  onKey(field: String) {
+    console.log(field);
   }
 }

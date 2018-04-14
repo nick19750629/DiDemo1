@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
@@ -10,6 +10,7 @@ import {LoggerService} from './shared/logger.service';
 import {AnotherProductService} from './shared/another-product.service';
 import { BindComponent } from './bind/bind.component';
 import { Bind1Component } from './bind1/bind1.component';
+import { Bind2Component } from './bind2/bind2.component';
 
 
 @NgModule({
@@ -18,11 +19,13 @@ import { Bind1Component } from './bind1/bind1.component';
     ProductComponent,
     Product1Component,
     BindComponent,
-    Bind1Component
+    Bind1Component,
+    Bind2Component
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [{
     provide: ProductService,
