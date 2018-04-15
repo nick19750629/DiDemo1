@@ -11,6 +11,7 @@ import {AnotherProductService} from './shared/another-product.service';
 import { BindComponent } from './bind/bind.component';
 import { Bind1Component } from './bind1/bind1.component';
 import { Bind2Component } from './bind2/bind2.component';
+import { MultiplePipe } from './pipe/multiple.pipe';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { Bind2Component } from './bind2/bind2.component';
     Product1Component,
     BindComponent,
     Bind1Component,
-    Bind2Component
+    Bind2Component,
+    MultiplePipe
   ],
   imports: [
     BrowserModule,
